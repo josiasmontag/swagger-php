@@ -7,6 +7,7 @@
 namespace SwaggerTests;
 
 use Closure;
+use phpDocumentor\Reflection\Types\Void_;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 use Exception;
@@ -84,7 +85,7 @@ class SwaggerTestCase extends TestCase
         };
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->expectedLogMessages = [];
         $this->originalLogger = Logger::getInstance()->log;
@@ -107,7 +108,7 @@ class SwaggerTestCase extends TestCase
         parent::setUp();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $this->assertCount(0, $this->expectedLogMessages, count($this->expectedLogMessages) . ' Swagger\Logger messages were not triggered');
         Logger::getInstance()->log = $this->originalLogger;
