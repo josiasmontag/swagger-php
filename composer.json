@@ -30,7 +30,7 @@
   },
   "require": {
     "php": ">=7.2",
-    "doctrine/annotations": "*",
+    "doctrine/annotations": "^1.13",
     "symfony/finder": ">=2.2",
     "symfony/yaml": ">=3.3"
   },
